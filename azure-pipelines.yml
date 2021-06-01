@@ -1,8 +1,5 @@
 trigger:
-- task: WhiteSource@21
-  inputs:
-    cwd: '$(System.DefaultWorkingDirectory)'
-    projectName: 'whitesourceproject'
+
 - '*'
 
 pool:
@@ -58,7 +55,7 @@ steps:
     arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
     zipAfterPublish: true
 
-- task: WhiteSource Bolt@20
+- task: WhiteSource@21
   displayName: 'Run WhiteSource Bolt'
 
 - task: PublishBuildArtifacts@1
